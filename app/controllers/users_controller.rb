@@ -74,6 +74,10 @@ class UsersController < ActionController::Base
     puts "ERROR: #{e}"
   end
 
+  def logout
+    session[:user_id] = ""
+    redirect_to "/singin"
+  end
 
   private
   # Only allow a trusted parameter "white list" through.
