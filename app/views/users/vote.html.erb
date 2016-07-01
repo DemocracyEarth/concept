@@ -1,17 +1,53 @@
-<div class="container">
-  <%= link_to "<button>Logout</button>".html_safe , "/logout" %>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <h1>Proposal</h1>
-  <h4>
-    Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
-  </h4>
-  <br />
-  <%= link_to "<button>Support</button>".html_safe , "/decition?id=1" %>
-  <%= link_to "<button>Reject</button>".html_safe , "/decition?id=2" %>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Democracy Earth : incoruptible governance for small and large communities. A global common of peer.</title>
+    <link href="https://bootswatch.com/paper/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag "style" %>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html"><img src="assets/olive-spaced.png" width="25" height="25">Democracy Earth Foundation</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html">LOGIN</a></li>
+        <li><a href="signup.html">SIGN UP</a></li>
+      </ul>
+    </div>
+    </nav>
+    <section>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Make earth great again</h1>
+        </div>
+        <div class="panel-body">
+          <h3>PROPOSAL</h3>
+          <hr></hr>
+          <p>
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+          </p>
+          <h3>SIGNATURE</h3>
+          <hr></hr>
+          <div class="row">
+            <div class="col-md-1"><img src="assets/satoshi.png" width="53" height="53" align="right" class="img-circle"></div>
+            <div class="col-md-2"><span style="color:#00C091">Satoshi Nakamoto</span><br><i>Earth</i>  <i class="fa fa-globe" aria-hidden="true"></i>
+            </div>
+          </div>
+          <p></p>
+          <center  <%= link_to "<button class='btn btn-yey'>Support</button>".html_safe , "/decition?id=1" %>
+          <%= link_to "<button class='btn btn-ney'>Reject</button>".html_safe , "/decition?id=2" %></center>
+<%= flash[:error] %>
+        </div>
+      </div>
+    </div>
+    </section>
+  </body>
+</html>
 
-  <%= flash[:error] %>

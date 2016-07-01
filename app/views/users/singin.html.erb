@@ -1,10 +1,48 @@
-<h1>Login</h1>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Democracy Earth : incoruptible governance for small and large communities. A global common of peer.</title>
+      <link href="https://bootswatch.com/paper/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+      <%= stylesheet_link_tag "style" %>
+      <script src="script.js"></script>
+    </head>
+    <body>
+      <!-- page content -->
+      <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+                  <li><%= link_to "<img src='assets/olive-spaced.png' width='25' height='25'>Democracy Earth Foundation".html_safe , "/" %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "<h5><font color='white'>LOGIN</font></h5>".html_safe , "/singin" %></li>
+        <li><%= link_to "<h5><font color='white'>SING UP</font></h5>".html_safe , "/" %></li>
+        </ul>
+      </div>
+      </nav>
+      <center>
+        <i class="fa fa-user fa-3x"></i>
+        <h2>Login</h2>
+      </center>
 
-<%= form_tag '/auth' do %>
+        <%= form_tag '/auth' do %>
+      <section class="center">
+      <div class="form-group">
+        <label class="control-label" for="focusedInput">Email</label>
+        <%= text_field_tag :email,"", class: 'form-group' %>
 
-    Email: <%= text_field_tag :email %>
-    Password: <%= password_field_tag :password %>
-    <%= submit_tag "Submit" %>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="focusedInput">Password</label>
+        <%= password_field_tag :password ,"", class: 'form-group'%>
 
-  <% end %>
-  <%= flash[:error] %>
+      </div>
+      <center>
+      <%= submit_tag "Login", class: 'btn btn-yey' %></center>
+      </section>
+    <% end %>
+      <%= flash[:error] %>
+    </body>
+  </html>

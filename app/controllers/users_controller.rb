@@ -5,9 +5,7 @@ require 'json'
 class UsersController < ActionController::Base
 
   # Set the request parameters
-  host = 'http://jsonplaceholder.typicode.com'
-  user = 'admin'
-  pwd = 'admin'
+  @host = 'http://192.168.202.26:8008/'
 
 
   def new
@@ -50,7 +48,7 @@ class UsersController < ActionController::Base
     if @user.interation != true
       @user.interation = true
       @user.save
-      endPointBlockChain(1)
+      endPointBlockChain(params[:id])
       redirect_to '/confirm'
     else
       flash[:error] = "You have Already Voted"
@@ -63,9 +61,22 @@ class UsersController < ActionController::Base
   end
 
   def endPointBlockChain(decition)
-    response = RestClient.get("http://jsonplaceholder.typicode.com/posts/1",
-                               #request_body_map.to_json,    # Encode the entire body as JSON
-                               { #:content_type => 'application/json',
+    @vote = ""
+    if decition == "1"
+      puts "1"
+      @vote = "yes"
+    else
+      puts "3"
+      @vote = "no"
+    end
+    request_body_map = {
+      :voters_id => session[:user_id],
+      :proposal => @vote
+    }
+    puts vote
+    response = RestClient.post("http://192.168.202.26:8008/send-vote",
+                               request_body_map.to_json,    # Encode the entire body as JSON
+                               { :content_type => 'application/json',
                                 :accept => 'application/json'})
     puts "#{response.to_str}"
     puts "Response status: #{response.code}"
